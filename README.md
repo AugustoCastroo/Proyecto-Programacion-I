@@ -1,3 +1,3 @@
 # Proyecto-Programacion-I
-Integrantes: Augusto Castro - Bruno Russo
+Integrantes: Augusto Castro
 Tema: Playa de Estacionamiento
