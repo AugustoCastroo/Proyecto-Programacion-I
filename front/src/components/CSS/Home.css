@@ -33,23 +33,23 @@
 }  
 
 .step-title {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 40px;
   text-transform: uppercase;
-  color: #fff;
+  color: #9370db;
 }
 
 .step-subtitle {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 30px;
   font-weight: 300;
   text-transform: uppercase;
-  color: #fff;
+  color: #9370db;
 }
 
 .pgph {
-  font-family: 'Courier New', Courier;
-  color: #19f9d8;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: #000000;
 }
 
 .container {
@@ -64,12 +64,12 @@
   margin: 20px;
   border-radius: 6px;
   overflow: hidden;
-  background: #212529;
-  box-shadow: 0px 1px rgba(25, 249, 216, 1);
+  background: #F0F0F0;
+  box-shadow: 0px 1px rgba(0, 0, 0, 1);
   transition: all 400ms ease;
 }
 
 .card:hover {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 1);
   transform: translateY(3%);
 }

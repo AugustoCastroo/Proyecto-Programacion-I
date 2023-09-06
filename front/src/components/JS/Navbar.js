@@ -27,23 +27,18 @@ export const Navbar = () => {
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li> */}
               {/* </ul> */}
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="/home">AparClick</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                  <div>
                     <ul class="navbar-nav">
-                      <li class="nav-item-dropdown">
-                          <button class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"></button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                          <Link to="/price">Precios</Link>
-                          <Link to="/contact">Contacto</Link>
-                          <Link to="/login">Login</Link>
-                          <Link to="/register">Register</Link>
-                        </ul>
-                      </li>
+                      <Link to="/price">Precios</Link>
+                      <Link to="/contact">Contacto</Link>
+                      <Link to="/login">Login</Link>
+                      <Link to="/register">Register</Link>
                     </ul>
                   </div>
                 </div>
@@ -53,13 +48,13 @@ export const Navbar = () => {
   )
 }
 
-export default Navbar
+{/* export default Navbar
 
 // import React from 'react'
 // import { Link } from 'react-router-dom'
 
-// export const Navbar = () => {
-//   return (
+// export const Navbar = () => { */}
+{/* //   return (
 //     <div>
 //         <nav className="navbar navbar-expand-lg navbar-light" data-bs-theme="dark">
 //             <a className="navbar-braknd" href="/#" > <img src={require(`../imagenes/um.png`) }  alt="" width="70px" height="70px" /></a> 
@@ -80,4 +75,4 @@ export default Navbar
 //         </nav>
 //     </div>
 //   )
-// }
+// } */}

@@ -2,7 +2,7 @@ import React from 'react';
 import Parallax from './Parallax';
 
 export const Home = () => {
-  return (
+return (
     <div>
         <header>
             <h2 className="subtitle">
@@ -71,7 +71,7 @@ export const Home = () => {
             </div>
         </header>
     </div>
-  )
+)
 
 }
 

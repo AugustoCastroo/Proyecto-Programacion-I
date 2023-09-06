@@ -7,7 +7,7 @@
 }
 
 .background {
-  background-color: #002b36;
+  background-color: #ffff;
   background-position: center;
   background-size: cover;
   padding: 0%;
@@ -24,36 +24,36 @@ body {
 
 
 .title {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   margin-bottom: 40px;
   font-size: 40px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #19f9d8;
+  color: #9370db;
 }
 
 .subtitle {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   margin-bottom: 20px;
   font-size: 30px;
   font-weight: 300;
   text-transform: uppercase;
-  color: #19f9d8;
+  color: #9370db;
 }
 
 p {
-  font-family: 'Courier New', Courier;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   margin-bottom: 40px;
   font-size: 18px;
-  color: #ffff;
+  color: #000000;
   padding: 0 100px;
 }
 
 .pgph {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   margin-bottom: 40px;
   font-size: 18px;
-  color: #ffff;
+  color: #000000;
   padding: 0 100px;
 }
 
@@ -61,8 +61,8 @@ p {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 40px;
-  border: 2px solid #fc0;
-  color: #fc0;
+  border: 2px solid #194df9;
+  color: #194df9;
   text-decoration: none;
   background: #0000;
 }
