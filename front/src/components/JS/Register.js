@@ -1,12 +1,15 @@
 import { Form, Formik, Field } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
 // import Swal from 'sweetalert2';
 // import { navigate } from '@reach/router';
 
 export function Register() {
 
+  const { setUser } = useContext(UserContext);
+  
   const initialValues= {
     name: '',
     email: '',
@@ -18,6 +21,13 @@ export function Register() {
     try {
       const response = await axios.post('http://localhost:5000/auth/register', values)
       console.log(response.data)
+      const { role } = response.data
+      console.log('role', role)
+
+      setUser({
+        role: role,
+        logged: true
+      })
       // Swal.fire({
       //   position: 'top-end',
       //   icon: 'success',
@@ -27,7 +37,6 @@ export function Register() {
       // })
       // navigate('/dashboard')
     } catch (error) {
-      console.log(error)
     }
   }
 

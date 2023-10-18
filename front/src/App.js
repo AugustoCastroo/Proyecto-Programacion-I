@@ -1,41 +1,42 @@
-import React, { useEffect } from 'react'
-import { Home } from "./components/JS/Home";
-import { Navbar } from "./components/JS/Navbar";
-import { Price } from "./components/JS/Price";
-import { Login } from './components/JS/Login';
-import { Footer } from './components/JS/Footer';
-import { Register } from './components/JS/Register';
-import Dashboard from './components/JS/Dashboard';
-import "./components/CSS/Home.css";
-import "./components/CSS/Navbar.css";
-import "./components/CSS/Price.css";
-import "./components/CSS/Login.css";
-import "./components/CSS/Footer.css";
-import "./components/CSS/Register.css";
-import './App.css';
+import {useState} from 'react';
+// import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+// import { UserContextProvider } from './context/UserContext';
+
+import { Navbar } from "./components/JS/Navbar";
+import { Footer } from './components/JS/Footer';
+
+import { UserContext } from './context/UserContext';
+import { PrivateRoutes } from './routes/PrivateRoutes';
+import { PublicRoutes } from './routes/PublicRoutes';
+
+import './App.css'
+import './index.css'
 
 
 export const App = () => {
-  useEffect(() => {
-    document.title = 'AparClick';
-    const favicon = document.querySelector("link[rel='icon']");
-    favicon.href = '';
-  }, []);
+
+  const [user, setUser] = useState({
+    role:'',
+    logged:false
+  })
 
   return (
     <div className='background'>
-      <Navbar />
-      <Routes>
-            <Route exact path='/home' element={<Home />} />
-              <Route exact path="/home" element={<Home />} />
-              <Route exact path="/price" element={<Price />} />
-              <Route exact path="/login" element={<Login />} />
-              <Route exact path="/register" element={<Register />} />
-              <Route exact path="/dashboard" element={<Dashboard />} />
-
-      </Routes>
-      <Footer/>
+      {/* los componentes tienen acceso a las variables user y setUser */}
+      <UserContext.Provider value={{user, setUser}}> 
+        <Navbar />
+          <Routes>
+            {
+              user.logged ? (
+                <Route path="/*" element={<PrivateRoutes />} />
+              ) : (
+                <Route path="/*" element={<PublicRoutes />} />
+              )
+            }
+          </Routes>
+        <Footer/>
+      </UserContext.Provider>
     </div>
     
   )

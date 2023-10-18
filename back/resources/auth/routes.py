@@ -13,11 +13,13 @@ def login():
     data = request.get_json()
     email = data.get('email')
     password = data.get('password')
-
     emailDb = User.query.filter_by(email=email).first()
+    role = emailDb.role
+
     if emailDb and emailDb.password == password:
         response = ({'mesaje': 'Inicio sesion correctamente'})
-        return jsonify(response), 200
+        return jsonify(role=role), 200
+    
     else:
         response = {'Mensaje': 'Error'}
         return jsonify(response), 401
@@ -33,11 +35,28 @@ def register():
     name=request.json.get('name')
     email=request.json.get('email')
     password=request.json.get('password')
+    role = '2'
 
-    print (name, email, password)
+    print (name, email, password, role)
 
-    user = User(name=name, email=email, password=password)
+    user = User(name=name, email=email, password=password, role=role)
     db.session.add(user)
     db.session.commit()
 
-    return jsonify({'mesaje': 'Usuario creado correctamente'})
+    return jsonify(role=role),200
+
+# ADD ITEM
+
+@auth.route('/additem', methods=['POST'])
+def addItem():
+    print("Agregado correctamente")
+    name=request.json.get('name')
+    price=request.json.get('price')
+    disponibility=request.json.get('disponibility')
+    role = '2'
+
+    print (name, price, disponibility, role)
+
+    user = User(name=name, price=price, disponibility=disponibility, role=role)
+    db.session.add(user)
+    db.session.commit()
