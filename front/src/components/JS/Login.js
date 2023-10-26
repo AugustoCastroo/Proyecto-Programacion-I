@@ -72,10 +72,6 @@ export const Login = () => {
               />
           </div>
           <button type="submit" className="btn btn-primary" onClick={handleLogin}>Login</button>
-          {/* <label htmlFor="exampleInputEmail1" className="form-label">¿No estás Logueado? ¡Registrate Aquí!</label> */}
-          {/* <Link to="/register">
-            <button type="submit" className="btn btn-primary" onClick={handleLogin}>Register</button>
-          </Link> */}
         </Form>
       </Formik>
     </div>
