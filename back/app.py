@@ -8,6 +8,7 @@ from models import User
 
 from resources.auth.routes import auth
 from resources.Parking import ParkingList
+from resources.Reserve import ReservesList, ReserveList
 
 app = Flask(__name__)
 api = Api(app)
@@ -26,6 +27,10 @@ app.register_blueprint(auth)
 
 # Resources
 api.add_resource(ParkingList, '/parking')
+api.add_resource(ReservesList, '/reserves')
+api.add_resource(ReserveList, '/reserve/<int:id>')
+
+
 
 
 @app.route('/')

@@ -61,15 +61,57 @@ p {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 40px;
-  border: 2px solid #194df9;
-  color: #194df9;
+  border: 2px solid #9370db;
+  color: #9370db;
   text-decoration: none;
   background: #0000;
 }
 
 .btn:hover {
-  background: none;
+  background: #9370db;
   
+}
+
+.btn-success {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 40px;
+  border: 2px solid #28a745; /* Color verde de Bootstrap */
+  color: #28a745;
+  text-decoration: none;
+  background: #0000;
+}
+
+.btn-success:hover {
+  background: #28a745;
+}
+
+.btn-danger {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 40px;
+  border: 2px solid #dc3545; /* Color rojo de Bootstrap */
+  color: #dc3545;
+  text-decoration: none;
+  background: #0000;
+}
+
+.btn-danger:hover {
+  background: #dc3545;
+}
+
+.btn-warning {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 40px;
+  border: 2px solid #ffc107; /* Color de advertencia de Bootstrap */
+  color: #ffc107;
+  text-decoration: none;
+  background: #0000;
+}
+
+.btn-warning:hover {
+  background: #ffc107;
 }
 
 .content {
@@ -85,5 +127,13 @@ p {
   background: #1f1d1d
 }
 
+.text {
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: #9370db;
+}
 
-
+.text2 {
+  descent-override: 0;
+}

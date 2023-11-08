@@ -14,11 +14,13 @@ def login():
     email = data.get('email')
     password = data.get('password')
     emailDb = User.query.filter_by(email=email).first()
+    
     role = emailDb.role
+    idUser = emailDb.id
 
     if emailDb and emailDb.password == password:
         response = ({'mesaje': 'Inicio sesion correctamente'})
-        return jsonify(role=role), 200
+        return jsonify(role=role, idUser=idUser), 200
     
     else:
         response = {'Mensaje': 'Error'}
@@ -43,7 +45,12 @@ def register():
     db.session.add(user)
     db.session.commit()
 
-    return jsonify(role=role),200
+    # return jsonify(role=role),200
+
+# GET ITEMS
+    registeredEmail = User.query.filter_by(email=email).first()
+    idUser = registeredEmail.id
+    return jsonify(role=role, idUser=idUser),200
 
 # ADD ITEM
 
@@ -60,3 +67,4 @@ def addItem():
     user = User(name=name, price=price, disponibility=disponibility, role=role)
     db.session.add(user)
     db.session.commit()
+

@@ -1,10 +1,10 @@
 import { Form, Formik, Field } from 'formik';
 import React, { useContext } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
-// import Swal from 'sweetalert2';
-// import { navigate } from '@reach/router';
+import { Link } from 'react-router-dom';
+import '../CSS/Login.css';
+import Swal from 'sweetalert2';
 
 export function Register() {
 
@@ -21,28 +21,31 @@ export function Register() {
     try {
       const response = await axios.post('http://localhost:5000/auth/register', values)
       console.log(response.data)
-      const { role } = response.data
+      const { role, idUser } = response.data
+
       console.log('role', role)
+      console.log('idUser', idUser)
 
       setUser({
         role: role,
-        logged: true
+        logged: true,
+        id: idUser
       })
-      // Swal.fire({
-      //   position: 'top-end',
-      //   icon: 'success',
-      //   title: 'Registro exitoso',
-      //   showConfirmButton: false,
-      //   timer: 1800
-      // })
-      // navigate('/dashboard')
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Registro exitoso',
+        showConfirmButton: false,
+        timer: 1800
+      })
     } catch (error) {
+      console.log(error)
     }
   }
 
   return (
     <div className='login-form'>
-        <h2>Register</h2>
+        <h2 className='title'>Register</h2>
         <Formik
           initialValues={initialValues}
           onSubmit={handleRegister}
@@ -77,10 +80,10 @@ export function Register() {
             />
           </div>
           <button type="submit" className="btn btn-primary" onClick={handleRegister}>Register</button>
-          {/* <label htmlFor="exampleInputEmail1" className="form-label">¡Si Ya Estás Registrado Loguate Aquí!</label> */}
-          {/* <Link to="/login">
+          <label htmlFor="exampleInputEmail1" className="form-label">¡Si Ya Estás Registrado Loguate Aquí!</label>
+            <Link to="/login">
             <button type="submit" className="btn btn-success" onClick={handleRegister}>Login</button>
-          </Link> */}
+            </Link>
         </Form>
       </Formik>
     </div>

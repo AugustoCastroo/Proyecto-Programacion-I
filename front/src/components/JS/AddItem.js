@@ -18,6 +18,7 @@ export const AddItem = () => {
         try {
         const response = await axios.post('http://localhost:5000/parking', values)
         console.log(response.data)
+        
         } catch (error) {
         console.log(error)
         }
@@ -90,7 +91,7 @@ export const AddItem = () => {
                         />
                         <label htmlFor="floatingInput">Disponibilidad</label>
                     </div>
-                    <button className="btn btn-primary w-100 py-2" type="submit" onClick={handleSubmit}>Agregar Parking</button>
+                    <button className="btn btn-success" type="button" onClick={handleSubmit}>Agregar Parking</button>
                 </Form>
             </Formik>
             </div>

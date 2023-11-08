@@ -18,7 +18,8 @@ export const App = () => {
 
   const [user, setUser] = useState({
     role:'',
-    logged:false
+    logged:false,
+    id: ''
   })
 
   return (

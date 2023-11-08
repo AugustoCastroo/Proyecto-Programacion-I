@@ -29,13 +29,17 @@ export const Navbar = () => {
                 //administrador
                 user.role === '1' ? (
                   <ul class="navbar-nav">
-                      <Link to="/additem">Editar Parkings</Link>
-                      <Link to="/home" onClick={handleLogout}>Exit</Link>
+                    <Link to="/additem">Añadir Reservas</Link>
+                    <Link to="/listparkings">Lista Parkings</Link>
+                    <Link to="/myparkings">Mis Reservas</Link>
+                    <Link to="/home" onClick={handleLogout}>Exit</Link>
                   </ul>
                 //usuario
                 ) : user.role === '2' ? (
                   <ul class="navbar-nav">
-                    <Link to="/additem">Reservar</Link>
+                    <Link to="/listparkings">Lista Parkings</Link>
+                    <Link to="/myparkings">Mis Reservas</Link>
+                    <Link to="/additem">Añadir Reservas</Link>
                     <Link to="/home" onClick={handleLogout}>Exit</Link>
                   </ul>
                 ) : (

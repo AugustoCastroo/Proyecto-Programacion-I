@@ -3,9 +3,9 @@ import React from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-// import { Link } from 'react-router-dom';
+import '../CSS/Login.css';
 import { useNavigate } from 'react-router-dom';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 export const Login = () => {
   
@@ -23,18 +23,21 @@ export const Login = () => {
     try {
       const response = await axios.post('http://localhost:5000/auth/login', values)
       console.log(response.data)
-      const { role } = response.data
-      console.log("role", role)
-      //   Swal.fire({
-      //     position: 'top-end',
-      //     icon: 'success',
-      //     title: 'Inicio de sesion correcto',
-      //     showConfirmButton: false,
-      //     timer: 1800
-      // })
+      const { role, idUser } = response.data
+
+      console.log('role', role)
+      console.log('idUser', idUser)
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Inicio de sesion correcto',
+        showConfirmButton: false,
+        timer: 1800
+      })
       setUser({
         logged:true,
-        role: role
+        role: role,
+        id: idUser
       })
       navigate('/home')
     } catch (error) {

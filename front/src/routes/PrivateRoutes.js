@@ -6,6 +6,7 @@ import { Login } from "../components/JS/Login";
 import { Register } from "../components/JS/Register";
 import  AddItem  from "../components/JS/AddItem";
 import { ListParkings } from "../components/JS/ListParkings";
+import { MyParkings } from "../components/JS/MyParkings";
 
 export const PrivateRoutes = () => {
     return (
@@ -15,6 +16,7 @@ export const PrivateRoutes = () => {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/additem" element={<AddItem />} />
             <Route exact path="/listparkings" element={<ListParkings />} />
+            <Route exact path="/myparkings" element={<MyParkings />} />            
             <Route exact path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );
