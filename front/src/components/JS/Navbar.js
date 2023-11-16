@@ -39,7 +39,6 @@ export const Navbar = () => {
                   <ul class="navbar-nav">
                     <Link to="/listparkings">Lista Parkings</Link>
                     <Link to="/myparkings">Mis Reservas</Link>
-                    <Link to="/additem">Añadir Reservas</Link>
                     <Link to="/home" onClick={handleLogout}>Exit</Link>
                   </ul>
                 ) : (

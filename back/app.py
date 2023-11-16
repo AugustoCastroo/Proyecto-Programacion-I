@@ -7,7 +7,7 @@ from database import db, FULL_URL_DB
 from models import User
 
 from resources.auth.routes import auth
-from resources.Parking import ParkingList
+from resources.Parking import ParkingsList, ParkingList
 from resources.Reserve import ReservesList, ReserveList
 
 app = Flask(__name__)
@@ -26,9 +26,10 @@ migrate.init_app(app,db)
 app.register_blueprint(auth)
 
 # Resources
-api.add_resource(ParkingList, '/parking')
+api.add_resource(ParkingsList, '/parkings')
+api.add_resource(ParkingList, '/parkings/<int:id>')
 api.add_resource(ReservesList, '/reserves')
-api.add_resource(ReserveList, '/reserve/<int:id>')
+api.add_resource(ReserveList, '/reserves/<int:id>')
 
 
 

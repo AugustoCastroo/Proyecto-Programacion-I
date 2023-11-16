@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Field, Form, Formik } from 'formik'
 // import { useState } from 'react';
-// import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 
 
 
@@ -10,15 +10,20 @@ export const AddItem = () => {
 
     const initialValues = {
         name: '',
+        price: '',
         disponibility: '',
-        price: ''
     }
 
     const handleSubmit = async (values) => {
         try {
-        const response = await axios.post('http://localhost:5000/parking', values)
+        const response = await axios.post('http://localhost:5000/parkings', values)
         console.log(response.data)
-        
+        Swal.fire({
+            icon: 'success',
+            title: 'Agregado correctamente',
+            showConfirmButton: false,
+            timer: 1800
+        })
         } catch (error) {
         console.log(error)
         }
@@ -37,20 +42,17 @@ export const AddItem = () => {
                         <thead>
                             <tr className='subtitle'>
                                 <th>Tipo de plaza</th>
-                                <th>Precio/hora</th>
-                                <th>Precio/día</th>
+                                <th>Precio</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr className='pgph'>
                                 <td>Cubierta</td>
-                                <td>$2.00</td>
-                                <td>$10.00</td>
+                                <td>$5.00</td>
                             </tr>
                             <tr className='pgph'>
                                 <td>Descubierta</td>
-                                <td>$1.50</td>
-                                <td>$8.00</td>
+                                <td>$2.50</td>
                             </tr>
                         </tbody>
                     </table>
@@ -91,7 +93,7 @@ export const AddItem = () => {
                         />
                         <label htmlFor="floatingInput">Disponibilidad</label>
                     </div>
-                    <button className="btn btn-success" type="button" onClick={handleSubmit}>Agregar Parking</button>
+                    <button className="btn btn-success" type="submit" onClick={handleSubmit}>Agregar Parking</button>
                 </Form>
             </Formik>
             </div>

@@ -44,12 +44,12 @@ class ReserveList(Resource):
 
         result = []
         for reserve in reserves:
-            product = Parking.query.get(reserve.parking_id)
+            parking = Parking.query.get(reserve.parking_id)
             result.append({
-                'id': product.id,
-                'name': product.name,
-                'price': product.price,
-                'disponibility': product.disponibility
+                'id': parking.id,
+                'name': parking.name,
+                'price': parking.price,
+                'disponibility': parking.disponibility
             })
 
         return jsonify(result)
@@ -62,15 +62,3 @@ class ReserveList(Resource):
         db.session.delete(reserve)
         db.session.commit()
         return jsonify({'message': 'Parking deleted successfully'})
-
-    def put(self, id):
-
-        user = User.query.get(id)
-        reserve.name = request.json('name', reserve.name)
-        reserve.price = request.json('price', reserve.price)
-        reserve.disponibility = request.json('disponibility', reserve.disponibility)
-
-        print(reserve.name, reserve.price, reserve.disponibility)
-
-        db.session.commit()
-        return jsonify({'message': 'Parking updated successfully'})
